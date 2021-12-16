@@ -8,7 +8,7 @@ module IPFS
     class PinRm
       # @return [HTTP::Response]
       def self.call(client, node, recursive:)
-        HTTP.get "#{client.api_url}/pin/rm?arg=#{node}&recursive=#{recursive}"
+        HTTP.post "#{client.api_url}/pin/rm?arg=#{node}&recursive=#{recursive}"
       end
     end
   end

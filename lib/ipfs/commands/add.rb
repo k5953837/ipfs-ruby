@@ -14,7 +14,7 @@ module IPFS
 
       def self.query(client, file)
         form = multiform(file)
-        HTTP.get("#{client.api_url}/add?stream-channels=true",
+        HTTP.post("#{client.api_url}/add?stream-channels=true",
                  body: form.to_s,
                  headers: { 'Content-Type' => form.content_type }).to_s
       end

@@ -12,7 +12,7 @@ module IPFS
       private
 
       def self.query(client, node)
-        HTTP.get("#{client.api_url}/ls?arg=#{node}&stream-channels=true").to_s
+        HTTP.post("#{client.api_url}/ls?arg=#{node}&stream-channels=true").to_s
       end
 
       def self.parse(response)
